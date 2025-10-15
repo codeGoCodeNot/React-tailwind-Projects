@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 1em;
+}
+
+.board-row {
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid black;
+}
+
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 60px;
+  min-height: 60px;
+  aspect-ratio: 1 / 1;
+  transition: background 0.2s;
+}
+
+.square {
+  border-top: none;
+  border-left: none;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  font-size: 2rem;
+}
+.square:nth-child(3n) {
+  border-right: none;
+}
+.square:nth-last-child(-n + 3) {
+  border-bottom: none;
+}
