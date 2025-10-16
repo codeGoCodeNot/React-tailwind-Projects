@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+main,
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.container,
+footer {
+  flex-direction: column;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
