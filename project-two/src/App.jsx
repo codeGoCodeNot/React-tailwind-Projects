@@ -1,20 +1,23 @@
 // import { useState } from "react";
 import Product from "./Product";
+import Navbar from "./Navbar";
+import Landing from "./Landing";
 
-const App = () => {
+const App = ({ products }) => {
   return (
     <>
-      <div className="products-grid grid grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))]">
-        <Product
-          name="Pineapple"
-          price={200}
-          image="https://res.cloudinary.com/dbfn5lnvx/image/upload/v1726640668/react-tutorial/superm-v2/pineapple.jpg"
-        />
-        <Product
-          name="Banana"
-          price={75}
-          image="https://res.cloudinary.com/dbfn5lnvx/image/upload/v1726640668/react-tutorial/superm-v2/banana.jpg"
-        />
+      <div className="wrapper-gray bg-gray-500 text-black">
+        <div className="container max-w-[900px] mx-auto px-4">
+          <Navbar />
+        </div>
+      </div>
+      <div className="container page-wrapper mx-auto mt-[20px]">
+        <Landing />
+      </div>
+      <div className="products-grid products-grid grid grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))]">
+        {products.map((product) => (
+          <Product key={product.id} details={product} />
+        ))}
       </div>
     </>
   );
